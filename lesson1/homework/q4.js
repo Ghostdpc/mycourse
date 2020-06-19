@@ -3,6 +3,7 @@ const FULLFILLED = "fullfilled"; // 成功
 const REJECTED = "rejected"; // 失败
 
 class MyPromise {
+  //每个promise都需要有一个传入处理函数的构造函数
   constructor(resover) {
     try {
       resover(this.resolve, this.reject);
@@ -79,8 +80,7 @@ class MyPromise {
           }
         }, 0);
       } else {
-        // 异步操作时
-        // 将成功回调和失败回调存储起来
+        // 异步操作时，不会马上返回结果，需要将成功回调和失败回调存储起来
         this.fullfillCallback.push(() => {
           setTimeout(() => {
             try {
@@ -106,6 +106,7 @@ class MyPromise {
     return resultPromise;
   }
 
+  //finally函数的模拟，不管是成功还是失败都会执行一次CALLBACK
   finally(callback) {
     return this.then(
       (value) => {
@@ -118,16 +119,18 @@ class MyPromise {
       }
     );
   }
-
+  //捕获异常
   catch(failCallback) {
     return this.then(undefined, failCallback);
   }
 
   //模拟all
   static all(array) {
+    //ALL是传入需要执行的数组
     let result = [];
     let index = 0;
     return new MyPromise((resolve, reject) => {
+      //将数据按照顺序推入result数组
       function addData(key, value) {
         result[key] = value;
         index++;
@@ -136,29 +139,26 @@ class MyPromise {
         }
       }
       for (let i = 0; i < array.length; i++) {
+        //处理当前执行的任务是否能够成功
         let current = array[i];
         if (current instanceof MyPromise) {
-          // promise 对象
+          // promise 对象需要返回then调用
           current.then(
             (value) => addData(i, value),
             (errMsg) => reject(errMsg)
           );
         } else {
-          // 普通值
+          // 普通值则返回
           addData(i, array[i]);
         }
       }
     });
   }
-
-  static resolve(value) {
-    if (value instanceof MyPromise) return value;
-    return new MyPromise((resolve) => resolve(value));
-  }
 }
 
   //处理传入then的值是否是promise，并且是不是重复
 function resolvePromise(newPromise, resolveResult, resolve, reject) {
+    //处理循环调用的情况
     if (newPromise === resolveResult) {
       return reject(new TypeError("Chaining cycle detected"));
     }
