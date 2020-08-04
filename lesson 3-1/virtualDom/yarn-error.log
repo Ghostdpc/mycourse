@@ -1,0 +1,40 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\yarn\bin\yarn.js
+
+PATH: 
+  C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\dotnet\;C:\Program Files (x86)\dotnet\;C:\Go\bin;C:\Program Files\Git\cmd;E:\putty\;C:\Users\Ghostdpc\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Users\Ghostdpc\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\Ghostdpc\AppData\Local\Programs\Python\Python37\;C:\Users\Ghostdpc\AppData\Local\Microsoft\WindowsApps;E:\bandizip\;E:\vscode\Microsoft VS Code\bin;F:\pycharm\PyCharm Community Edition 2018.3.3\bin;C:\Users\Ghostdpc\AppData\Local\atom\bin;C:\Users\Ghostdpc\go\bin;G:\goland\GoLand 2019.2.1\bin
+
+Yarn version: 
+  1.22.0
+
+Node version: 
+  13.8.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: connect ETIMEDOUT 104.16.17.35:443
+      at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1137:16)
+
+npm manifest: 
+  {
+    "name": "snabbdom-demo",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+      "dev": "parcel index.html --open",
+      "build": "parcel build index.html"
+    },
+    "dependencies": {
+      "parcel-bundler": "^1.12.4",
+      "snabbdom": "^0.7.4"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
