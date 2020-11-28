@@ -1,18 +1,13 @@
 <template>
-  <h1 class="red">Hello World</h1>
+  <div id="app">
+    <h1>hello</h1>
+  </div>
 </template>
 
 <script>
-  export default {
-    head() {
-      // Set Meta Tags for this Page
-    }
-    // ...
-  }
+export default {
+  name: "App"
+};
 </script>
 
-<style>
-  .red {
-    color: red;
-  }
-</style>
+<style></style>

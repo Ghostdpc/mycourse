@@ -1,8 +1,51 @@
 [
   {
-    "name": "index",
     "path": "/",
-    "component": "D:\\\\t\\\\mycourse\\\\lesson3-3\\\\pages\\\\index.vue",
-    "chunkName": "pages/index"
+    "component": "D:\\\\project\\\\mycourse\\\\lesson3-3\\\\pages\\\\layout",
+    "children": [
+      {
+        "path": "",
+        "name": "home",
+        "component": "D:\\\\project\\\\mycourse\\\\lesson3-3\\\\pages\\\\home",
+        "_name": "_fb086fd4"
+      },
+      {
+        "path": "/login",
+        "name": "login",
+        "component": "D:\\\\project\\\\mycourse\\\\lesson3-3\\\\pages\\\\login",
+        "_name": "_6594f9dc"
+      },
+      {
+        "path": "/register",
+        "name": "register",
+        "component": "D:\\\\project\\\\mycourse\\\\lesson3-3\\\\pages\\\\login",
+        "_name": "_6594f9dc"
+      },
+      {
+        "path": "/profile/:uername",
+        "name": "profile",
+        "component": "D:\\\\project\\\\mycourse\\\\lesson3-3\\\\pages\\\\profile",
+        "_name": "_2f07d712"
+      },
+      {
+        "path": "/settings",
+        "name": "settings",
+        "component": "D:\\\\project\\\\mycourse\\\\lesson3-3\\\\pages\\\\settings",
+        "_name": "_43331bda"
+      },
+      {
+        "path": "/editor",
+        "name": "editor",
+        "component": "D:\\\\project\\\\mycourse\\\\lesson3-3\\\\pages\\\\editor",
+        "_name": "_6621fa38"
+      },
+      {
+        "path": "/article/:slug",
+        "name": "article",
+        "component": "D:\\\\project\\\\mycourse\\\\lesson3-3\\\\pages\\\\article",
+        "_name": "_15d21a5f"
+      }
+    ],
+    "_name": "_4e8446be"
   }
 ]
