@@ -6,46 +6,38 @@
       {
         "path": "",
         "name": "home",
-        "component": "D:\\\\project\\\\mycourse\\\\lesson3-3\\\\pages\\\\home",
-        "_name": "_fb086fd4"
+        "component": "D:\\\\project\\\\mycourse\\\\lesson3-3\\\\pages\\\\home"
       },
       {
         "path": "/login",
         "name": "login",
-        "component": "D:\\\\project\\\\mycourse\\\\lesson3-3\\\\pages\\\\login",
-        "_name": "_6594f9dc"
+        "component": "D:\\\\project\\\\mycourse\\\\lesson3-3\\\\pages\\\\login"
       },
       {
         "path": "/register",
         "name": "register",
-        "component": "D:\\\\project\\\\mycourse\\\\lesson3-3\\\\pages\\\\login",
-        "_name": "_6594f9dc"
+        "component": "D:\\\\project\\\\mycourse\\\\lesson3-3\\\\pages\\\\login"
       },
       {
-        "path": "/profile/:uername",
+        "path": "/profile/:username",
         "name": "profile",
-        "component": "D:\\\\project\\\\mycourse\\\\lesson3-3\\\\pages\\\\profile",
-        "_name": "_2f07d712"
+        "component": "D:\\\\project\\\\mycourse\\\\lesson3-3\\\\pages\\\\profile"
       },
       {
         "path": "/settings",
         "name": "settings",
-        "component": "D:\\\\project\\\\mycourse\\\\lesson3-3\\\\pages\\\\settings",
-        "_name": "_43331bda"
+        "component": "D:\\\\project\\\\mycourse\\\\lesson3-3\\\\pages\\\\settings"
       },
       {
         "path": "/editor",
         "name": "editor",
-        "component": "D:\\\\project\\\\mycourse\\\\lesson3-3\\\\pages\\\\editor",
-        "_name": "_6621fa38"
+        "component": "D:\\\\project\\\\mycourse\\\\lesson3-3\\\\pages\\\\editor"
       },
       {
         "path": "/article/:slug",
         "name": "article",
-        "component": "D:\\\\project\\\\mycourse\\\\lesson3-3\\\\pages\\\\article",
-        "_name": "_15d21a5f"
+        "component": "D:\\\\project\\\\mycourse\\\\lesson3-3\\\\pages\\\\article"
       }
-    ],
-    "_name": "_4e8446be"
+    ]
   }
 ]

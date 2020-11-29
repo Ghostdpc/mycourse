@@ -23,7 +23,7 @@ module.exports = {
                     component:resolve(__dirname,"pages/login/")
                 },
                 {
-                    path:"/profile/:uername",
+                    path:"/profile/:username",
                     name:"profile",
                     component:resolve(__dirname,"pages/profile/")
                 },                
@@ -44,5 +44,9 @@ module.exports = {
                 }]
             }])
         }
-    }
+    },
+    plugins:[
+        `~/plugins/request.js`,
+        `~/plugins/dayjs.js`
+    ]
 }

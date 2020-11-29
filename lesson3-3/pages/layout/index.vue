@@ -8,29 +8,28 @@
             <!-- Add "active" class when you're on that page" -->
             <nuxt-link to="/" class="nav-link" exact>Home</nuxt-link>
           </li>
-          <li class="nav-item">
-            <nuxt-link class="nav-link" to="/editor">
-              <i class="ion-compose"></i>&nbsp;New Post
-            </nuxt-link>
-          </li>
-          <li class="nav-item">
-            <nuxt-link class="nav-link" to="/settings">
-              <i class="ion-gear-a"></i>&nbsp;Settings
-            </nuxt-link>
-          </li>
-          <li class="nav-item">
-            <nuxt-link class="nav-link" to="/register">Sign up</nuxt-link>
-          </li>
-          <li class="nav-item">
-            <nuxt-link class="nav-link" to="/login">Sign in</nuxt-link>
-          </li>
-
-          <li class="nav-item">
-            <nuxt-link class="nav-link" to="/profile/1">
-              <img ng-src="" class="user-pic" />
-              testddp
-            </nuxt-link>
-          </li>
+          <template v-if="user">
+            <li class="nav-item">
+              <nuxt-link class="nav-link" to="/editor"> <i class="ion-compose"></i>&nbsp;New Post </nuxt-link>
+            </li>
+            <li class="nav-item">
+              <nuxt-link class="nav-link" to="/settings"> <i class="ion-gear-a"></i>&nbsp;Settings </nuxt-link>
+            </li>
+            <li class="nav-item">
+              <nuxt-link class="nav-link" to="/profile/1">
+                <img :src="user.image" class="user-pic" />
+                {{ user.username }}
+              </nuxt-link>
+            </li>
+          </template>
+          <template v-else>
+            <li class="nav-item">
+              <nuxt-link class="nav-link" to="/register">Sign up</nuxt-link>
+            </li>
+            <li class="nav-item">
+              <nuxt-link class="nav-link" to="/login">Sign in</nuxt-link>
+            </li>
+          </template>
         </ul>
       </div>
     </nav>
@@ -42,8 +41,7 @@
         <a href="/" class="logo-font">conduit</a>
         <span class="attribution">
           An interactive learning project from
-          <a href="https://thinkster.io">Thinkster</a>. Code &amp; design
-          licensed under MIT.
+          <a href="https://thinkster.io">Thinkster</a>. Code &amp; design licensed under MIT.
         </span>
       </div>
     </footer>
@@ -51,10 +49,13 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   name: "Layoutindex",
+  computed: {
+    ...mapState(["user"]),
+  },
 };
 </script>
 
-<style>
-</style>
+<style></style>

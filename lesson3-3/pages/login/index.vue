@@ -11,18 +11,20 @@
           </p>
 
           <ul class="error-messages">
-            <li>That email is already taken</li>
+            <template v-for="(messages, field) in errors">
+              <li v-for="(message, index) in messages" :key="index">{{ field }} {{ message }}</li>
+            </template>
           </ul>
 
           <form @submit.prevent="onSubmit">
             <fieldset v-if="!isLogin" class="form-group">
-              <input class="form-control form-control-lg" type="text" placeholder="Your Name" />
+              <input class="form-control form-control-lg" type="text" v-model="user.username" placeholder="Your Name" required />
             </fieldset>
             <fieldset class="form-group">
-              <input class="form-control form-control-lg" type="text" v-model="user.email" placeholder="Email" />
+              <input class="form-control form-control-lg" type="email" v-model="user.email" placeholder="Email" required />
             </fieldset>
             <fieldset class="form-group">
-              <input class="form-control form-control-lg" type="password" v-model="user.password" placeholder="Password" />
+              <input class="form-control form-control-lg" type="password" v-model="user.password" placeholder="Password" required minlength="8" />
             </fieldset>
             <button class="btn btn-lg btn-primary pull-xs-right">
               {{ isLogin ? "Sign in " : "Sign up" }}
@@ -35,8 +37,10 @@
 </template>
 
 <script>
-import request from "@/utils/request";
+import { login, register } from "@/api/user";
+const Cookie = process.client ? require("js-cookie") : undefined;
 export default {
+  middleware: "noauthenticated",
   name: "Loginindex",
   computed: {
     isLogin() {
@@ -46,22 +50,30 @@ export default {
   data() {
     return {
       user: {
+        username: "",
         email: "",
         password: "",
       },
+      errors: {},
     };
   },
   methods: {
     async onSubmit() {
-      const { data } = await request({
-        method: "POST",
-        url: "/api/users/login",
-        data: {
-          user: this.user,
-        },
-      });
-      console.log(data);
-      this.$router.push("/");
+      try {
+        const { data } = this.isLogin
+          ? await login({
+              user: this.user,
+            })
+          : await register({
+              user: this.user,
+            });
+        this.$store.commit("setUser", data.user);
+        //数据持久化
+        Cookie.set("user", data.user);
+        this.$router.push("/");
+      } catch (err) {
+        this.errors = err.response.data.errors;
+      }
     },
   },
 };
