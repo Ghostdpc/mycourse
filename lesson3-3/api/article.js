@@ -43,3 +43,19 @@ export const getComments= (slug)=>{
       url: `/api/articles/${slug}/comments`,
     })
 }
+
+export const createArticle = (param)=>{
+  return request({
+    method:"POST",
+    url: `/api/articles`,
+    data:param
+  })
+}
+
+// export const updateArticle = (param)=>{
+//   return request({
+//     method:"PUT",
+//     url: `/api/articles`,
+//     data:param
+//   })
+// }

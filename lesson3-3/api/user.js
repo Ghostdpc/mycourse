@@ -14,3 +14,12 @@ export const register= (data)=>{
         data,
       })
 }
+
+export const update= (data)=>{
+  console.log("12312312")
+  return request({
+      method: "PUT",
+      url: "/api/user",
+      data,
+    })
+}
