@@ -1,8 +1,8 @@
 {
-  "footer": "Copyright &copy; 2019",
+  "footer": "test change footer",
   "dark_mode": false,
-  "site_name": "Nichlas W. Andersen",
-  "site_description": "Creative technologist",
-  "hero_title": "Simplicity. Aesthetics. Value.",
-  "hero_subtitle": "Hi there, I'm an independent Digital Designer &amp; Art Director focused on digital design for brands that like to have fun."
+  "site_name": "Ghost",
+  "site_description": "Just a simple work",
+  "hero_title": "A. B. C.",
+  "hero_subtitle": "THIS IS JUST A SIMPLE WORK FOR TESTING "
 }
