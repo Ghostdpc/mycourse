@@ -1,0 +1,2 @@
+**1.说说 application/json 和 application/x-www-form-urlencoded 二者之间的区别**。
+application/x-www-form-urlencoded方式是比较老的一种方式，这种方式的好处就是浏览器都支持，在请求发送过程中会对数据进行序列化处理，以键值对形式？key1=value1&key2=value2的方式发送到服务器，application/json作为请求content-type，告诉服务器请求的主题内容是json格式的字符串，服务器端会对json字符串进行解析，这种方式的好处就是前端人员不需要关心数据结构的复杂度
